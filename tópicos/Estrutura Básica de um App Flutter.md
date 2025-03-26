@@ -1,0 +1,48 @@
+## Criando um projeto Flutter
+
+Para criar um projeto Flutter utilize o comando `flutter create nome-do-projeto`
+
+``` 
+flutter create hello
+```
+
+## Estrutura de diretórios e pastas principais 
+
+A estrutura `root` de um projeto Flutter será: 
+
+![[principais-arquivos.png]]
+
+
+### Principais diretórios e arquivos 
+
+##### lib 
+Podemos dizer que o diretório lib é o principal do projeto pois nele iremos encontrar:
+* Arquivo `main.dart` que é o arquivo principal de todo projeto 
+* Todos subdiretórios do nosso projeto. Ex: controllers, models, utils, etc.
+
+![[lib.png]]
+##### pubspec.yaml
+Neste arquivo definimos as dependências do nosso projeto
+![[dependencias.png]]
+##### Diretórios de sistema operacional
+Diretórios com nome referente a algum sistema operacional possuem os arquivos de configuração específicos daquele SO.
+
+Ex: No diretório android encontramos os seguintes arquivos: 
+![[diretorio-android.png]]
+Em resumo, cada arquivo serve para configurar algo referente a versão android 
+(no diretório android) do seu aplicativo. Podemos dar ou retirar `permissões` ao aplicativo, configurar a versão do sdk utilizada, etc.
+
+
+## Widgets - Stateless e Stateful
+
+Como dito anteriormente, widgets são como `"blocos"` ou `"elementos"` que quando combinados formam o aplicativo
+
+Widgets: *`componente visual para definir a interface de um aplicativo`*
+
+Um widget pode ser Stateful ou Stateless
+#### Stateless
+É um widget `sem controle de estado`, não é possível alterar dinamicamente o widget. São amplamente utilizados para criação de estruturas não mutáveis (telas, menus, imagens, etc), ou seja, tudo que não envolva entradas de dados dos usuários, acessos a APIs, etc.
+#### Stateful
+É um widget que `contém um controle de estado` e isso os torna mutáveis. É utilizado para tudo que necessita de uma entrada de dados.
+
+### ![[stateless-vs-stateful-widgets.png]]

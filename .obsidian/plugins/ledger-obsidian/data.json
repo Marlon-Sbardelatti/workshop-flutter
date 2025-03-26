@@ -1,0 +1,9 @@
+{
+  "tutorialIndex": 0,
+  "currencySymbol": "$",
+  "ledgerFile": "transactions.ledger",
+  "assetAccountsPrefix": "Assets",
+  "expenseAccountsPrefix": "Expenses",
+  "incomeAccountsPrefix": "Income",
+  "liabilityAccountsPrefix": "Liabilities"
+}

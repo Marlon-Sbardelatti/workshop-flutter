@@ -1,0 +1,200 @@
+{
+  "main": {
+    "id": "352cd40d7a1be83a",
+    "type": "split",
+    "children": [
+      {
+        "id": "3b16f0bb1c5c3325",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "041ed307656af409",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "tópicos/Estrutura Básica de um App Flutter.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Estrutura Básica de um App Flutter"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3581148ce666d428",
+    "type": "split",
+    "children": [
+      {
+        "id": "5081b873dc26899c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6175061a0ba40a1f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "ccbbcf5c0bc90f10",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "f1b0e89bd7e29e9d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3904ba63db48d842",
+    "type": "split",
+    "children": [
+      {
+        "id": "201893d9266f13b2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dfd54ab006d3f40c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Flutter.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Flutter"
+            }
+          },
+          {
+            "id": "c51681932641a3b7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Flutter.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Flutter"
+            }
+          },
+          {
+            "id": "9df0fd33e98b3dae",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "6eee4bc86cebe9f7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Flutter.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Flutter"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "ledger-obsidian:Add to Ledger": false
+    }
+  },
+  "active": "041ed307656af409",
+  "lastOpenFiles": [
+    "Workshop Flutter.md",
+    "tópicos/Widgets Essenciais.md",
+    "tópicos/Estrutura Básica de um App Flutter.md",
+    "Untitled.canvas",
+    "2025-03-25.md",
+    "tópicos/imagens/elevated-button.png",
+    "tópicos/imagens/textfield.png",
+    "Exemplos.md",
+    "tópicos/imagens/center.png",
+    "Pasted image 20250325173811.png",
+    "tópicos/imagens/stack.png",
+    "Pasted image 20250325173726.png",
+    "Pasted image 20250325173609.png",
+    "Pasted image 20250325173519.png",
+    "tópicos/imagens/container.png",
+    "tópicos/imagens/container.png",
+    "tópicos/Introdução ao Flutter.md",
+    "tópicos/imagens",
+    "tópicos/Estilização e Temas.md",
+    "tópicos/Navegação entre Telas.md",
+    "tópicos/Persistência de Dados.md",
+    "tópicos/Consumo de API.md",
+    "tópicos",
+    "tópicos/Gerenciamento de Estado.md",
+    "2025-03-24.md"
+  ]
+}
