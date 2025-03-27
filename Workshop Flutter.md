@@ -8,7 +8,7 @@
 ## [[Widgets Essenciais]]
 - **Widgets de layout**: `Column`, `Row`, `Container`, `Stack`
 - **Widgets de interação**: `ElevatedButton`, `TextField`, `ListView`
-- **Personalização** com `Padding`, `Margin`, `Decoration`
+- **Personalização** com `Padding`, `Margin`
 
 ## [[Gerenciamento de Estado]]
 - `setState()`

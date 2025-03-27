@@ -8,7 +8,21 @@
         "type": "tabs",
         "children": [
           {
-            "id": "041ed307656af409",
+            "id": "de31479e63c67eb0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "tópicos/Widgets Essenciais.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Widgets Essenciais"
+            }
+          },
+          {
+            "id": "a93ee67fab080549",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -169,32 +183,33 @@
       "ledger-obsidian:Add to Ledger": false
     }
   },
-  "active": "041ed307656af409",
+  "active": "6175061a0ba40a1f",
   "lastOpenFiles": [
-    "Workshop Flutter.md",
+    "tópicos/imagens/positioned-vermelho.png",
+    "tópicos/imagens/positioned.png",
+    "tópicos/imagens/stack-verde-azul-vermelho.png",
+    "tópicos/imagens/stack-verde-azul.png",
+    "tópicos/imagens/stack-verde.png",
     "tópicos/Widgets Essenciais.md",
+    "tópicos/imagens/row-centralizada.png",
+    "tópicos/imagens/row-sem-space.png",
+    "tópicos/imagens/texto-sem-padding.png",
+    "tópicos/imagens/alinhamento-completo.png",
+    "tópicos/imagens/alinhamento-horizontal.png",
+    "tópicos/imagens/exemplo-column.png",
     "tópicos/Estrutura Básica de um App Flutter.md",
-    "Untitled.canvas",
-    "2025-03-25.md",
-    "tópicos/imagens/elevated-button.png",
-    "tópicos/imagens/textfield.png",
-    "Exemplos.md",
-    "tópicos/imagens/center.png",
-    "Pasted image 20250325173811.png",
-    "tópicos/imagens/stack.png",
-    "Pasted image 20250325173726.png",
-    "Pasted image 20250325173609.png",
-    "Pasted image 20250325173519.png",
-    "tópicos/imagens/container.png",
-    "tópicos/imagens/container.png",
+    "Workshop Flutter.md",
     "tópicos/Introdução ao Flutter.md",
-    "tópicos/imagens",
-    "tópicos/Estilização e Temas.md",
+    "Exemplos.md",
     "tópicos/Navegação entre Telas.md",
     "tópicos/Persistência de Dados.md",
     "tópicos/Consumo de API.md",
-    "tópicos",
     "tópicos/Gerenciamento de Estado.md",
+    "Untitled.canvas",
+    "2025-03-25.md",
+    "tópicos/imagens",
+    "tópicos/Estilização e Temas.md",
+    "tópicos",
     "2025-03-24.md"
   ]
 }

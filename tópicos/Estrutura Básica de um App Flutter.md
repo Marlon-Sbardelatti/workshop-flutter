@@ -2,7 +2,7 @@
 
 Para criar um projeto Flutter utilize o comando `flutter create nome-do-projeto`
 
-``` 
+``` bash
 flutter create hello
 ```
 
@@ -24,10 +24,33 @@ Podemos dizer que o diretório lib é o principal do projeto pois nele iremos en
 ##### pubspec.yaml
 Neste arquivo definimos as dependências do nosso projeto
 ![[dependencias.png]]
+
+
+> [!NOTE] Adicionando uma dependência 
+> **para a adicionarmos uma dependência (package) ao nosso projeto utilizamos o comando flutter pub + ação + nome do pacote**
+
+```bash
+flutter pub add shared_preferences
+```
+
+Alternativamente podemos primeiro adicionar o nome da dependência no nosso arquivo `pubspec.yaml`
+
+```yaml
+dependencies:
+  shared_preferences: ^2.5.2
+```
+
+e executar o comando que baixará **todas** as dependências no arquivo: 
+
+```bash
+flutter pub get
+```
+
+
 ##### Diretórios de sistema operacional
 Diretórios com nome referente a algum sistema operacional possuem os arquivos de configuração específicos daquele SO.
 
-Ex: No diretório android encontramos os seguintes arquivos: 
+**Ex:** No diretório android encontramos os seguintes arquivos: 
 ![[diretorio-android.png]]
 Em resumo, cada arquivo serve para configurar algo referente a versão android 
 (no diretório android) do seu aplicativo. Podemos dar ou retirar `permissões` ao aplicativo, configurar a versão do sdk utilizada, etc.
@@ -37,7 +60,9 @@ Em resumo, cada arquivo serve para configurar algo referente a versão android
 
 Como dito anteriormente, widgets são como `"blocos"` ou `"elementos"` que quando combinados formam o aplicativo
 
-Widgets: *`componente visual para definir a interface de um aplicativo`*
+
+> [!NOTE] Widgets
+> **componente visual para definir a interface de um aplicativo**
 
 Um widget pode ser Stateful ou Stateless
 #### Stateless

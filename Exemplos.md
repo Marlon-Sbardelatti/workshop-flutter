@@ -1,2 +1,8 @@
 - [ ] widgets stateful e stateless 
 - [ ] widgets de layout 
+- [ ] widgets de interação 
+- [ ] widgets de personalização 
+- [ ] Estado local (setState) 
+- [ ] Estado global (provider)
+- [ ] Shared Preferences
+- [ ] Navigator 
