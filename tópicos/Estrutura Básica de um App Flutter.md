@@ -66,8 +66,14 @@ Como dito anteriormente, widgets são como `"blocos"` ou `"elementos"` que quand
 
 Um widget pode ser Stateful ou Stateless
 #### Stateless
-É um widget `sem controle de estado`, não é possível alterar dinamicamente o widget. São amplamente utilizados para criação de estruturas não mutáveis (telas, menus, imagens, etc), ou seja, tudo que não envolva entradas de dados dos usuários, acessos a APIs, etc.
+É um widget `sem controle de estado`, não é possível alterar dinamicamente o widget. São amplamente utilizados para criação de estruturas não mutáveis (telas,  imagens, etc), ou seja, tudo que não envolva entradas de dados dos usuários, acessos a APIs, etc.
 #### Stateful
-É um widget que `contém um controle de estado` e isso os torna mutáveis. É utilizado para tudo que necessita de uma entrada de dados.
+É um widget que `contém um controle de estado` e isso os torna mutáveis. É utilizado para tudo que necessita de uma entrada de dados. 
+Um widget pode ser stateful quando necessita de: 
+- entrada de dados;
+- comportamentos ao iniciar a tela;
+- formulários;
+- acesso de uma informação por todos os componentes de uma tela;
+- tudo que envolva uma requisição http `normalmente` será stateful
 
 ### ![[stateless-vs-stateful-widgets.png]]

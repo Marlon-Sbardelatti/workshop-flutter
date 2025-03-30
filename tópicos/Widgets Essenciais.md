@@ -723,3 +723,348 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 ### Exemplo criando um Formulário
+Agora vamos criar um Formulário com o widget Form
+
+#### Form
+
+Criamos um form básico utilizando como child um widget Column pois
+os elementos interiores serão posicionados verticalmente. 
+
+``` dart 
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Form(
+          child: Column(
+        children: [
+          TextFormField(),
+          TextFormField(),
+          ElevatedButton(onPressed: () {}, child: const Text('enviar'))
+        ],
+      )),
+    );
+  }
+}
+```
+
+
+![[Pasted image 20250329201627.png]]
+
+Podemos então envolver o widget Form em um Container para que possamos 
+dimensionar o seu tamanho, também envolvemos o widget Container em 
+um widget Center para fazer a centralização
+
+``` dart 
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Container(
+          width: 300,
+          height: 300,
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.blue),
+              borderRadius: BorderRadius.circular(12)),
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Form(
+                child: Column(
+              children: [
+                TextFormField(),
+                TextFormField(),
+                ElevatedButton(onPressed: () {}, child: const Text('enviar'))
+              ],
+            )),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+![[Pasted image 20250329202354.png]]
+
+Agora podemos personalizar os campos de texto utilizando labels e 
+adicionando um espaço entre cada elemento
+
+```dart 
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Container(
+          width: 300,
+          height: 300,
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.blue),
+              borderRadius: BorderRadius.circular(12)),
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Form(
+                child: Column(
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Nome'),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Sobrenome'),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                ElevatedButton(onPressed: () {}, child: const Text('enviar'))
+              ],
+            )),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+![[Pasted image 20250329202726.png]]
+
+Agora para tornar o Form funcional devemos criar e adicionar Controllers a cada campo.
+
+> [!NOTE] Controllers 
+> são atributos adicionados a cada campo que permitem o `acesso` ao
+valor de cada campo
+
+``` dart
+class _MyHomePageState extends State<MyHomePage> {
+  final _firstNameController = TextEditingController();
+  final _lastNameController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Container(
+          width: 300,
+          height: 300,
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.blue),
+              borderRadius: BorderRadius.circular(12)),
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Form(
+                child: Column(
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Nome'),
+                  controller: _firstNameController,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Sobrenome'),
+                  controller: _lastNameController,
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                ElevatedButton(onPressed: () {}, child: const Text('enviar'))
+              ],
+            )),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+Com os controllers criados agora podemos criar uma função e chamá-la no `onpressed` do nosso botão. Nesta função printamos os nomes através do controller
+
+``` dart
+class _MyHomePageState extends State<MyHomePage> {
+  final _firstNameController = TextEditingController();
+  final _lastNameController = TextEditingController();
+
+  void submit() {
+    debugPrint(_firstNameController.text);
+    debugPrint(_lastNameController.text);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Container(
+          width: 300,
+          height: 300,
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.blue),
+              borderRadius: BorderRadius.circular(12)),
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Form(
+                child: Column(
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Nome'),
+                  controller: _firstNameController,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Sobrenome'),
+                  controller: _lastNameController,
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                ElevatedButton(
+                    onPressed: () => submit(), child: const Text('enviar'))
+              ],
+            )),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+Agora que conseguimos printar os nomes, devemos adicionar uma validação aos 
+campos, isso é feito através do atributo validator no campo.
+
+
+> [!NOTE] Validator
+> No validator adicionamos uma função que verifica o texto atual no campo e retorna uma mensagem de erro caso necessário
+
+```dart
+                TextFormField(
+                    decoration: InputDecoration(labelText: 'Nome'),
+                    controller: _firstNameController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Por favor insira o seu nome';
+                      }
+                      return null;
+                    }),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                    decoration: InputDecoration(labelText: 'Sobrenome'),
+                    controller: _lastNameController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Por favor insira o seu sobrenome';
+                      }
+                      return null;
+                    }),
+
+```
+
+Ainda é necessário fazer uma alteração, devemos criar um identificador do formulário e
+na nossa função `submit` fazer uma nova verificação
+
+```dart
+class _MyHomePageState extends State<MyHomePage> {
+  final _formKey = GlobalKey<FormState>();
+  final _firstNameController = TextEditingController();
+  final _lastNameController = TextEditingController();
+
+  void submit() {
+    if (_formKey.currentState?.validate() ?? false) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Cadastro realizado com sucesso!')));
+      debugPrint(_firstNameController.text);
+      debugPrint(_lastNameController.text);
+
+      _firstNameController.text = '';
+      _lastNameController.text = '';
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Container(
+          width: 300,
+          height: 300,
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.blue),
+              borderRadius: BorderRadius.circular(12)),
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    TextFormField(
+                        decoration: InputDecoration(labelText: 'Nome'),
+                        controller: _firstNameController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Por favor insira o seu nome';
+                          }
+                          return null;
+                        }),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                        decoration: InputDecoration(labelText: 'Sobrenome'),
+                        controller: _lastNameController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Por favor insira o seu sobrenome';
+                          }
+                          return null;
+                        }),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    ElevatedButton(
+                        onPressed: () => submit(), child: const Text('enviar'))
+                  ],
+                )),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+A função `submit` agora só é executada caso nenhum erro seja retornado em algum 
+validator pertencente ao form com a key especificada. 

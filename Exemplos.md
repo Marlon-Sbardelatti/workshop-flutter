@@ -1,7 +1,7 @@
-- [ ] widgets stateful e stateless 
-- [ ] widgets de layout 
-- [ ] widgets de interação 
-- [ ] widgets de personalização 
+- [x] widgets stateful e stateless ✅ 2025-03-29
+- [x] widgets de layout ✅ 2025-03-29
+- [x] widgets de interação ✅ 2025-03-29
+- [x] widgets de personalização ✅ 2025-03-29
 - [ ] Estado local (setState) 
 - [ ] Estado global (provider)
 - [ ] Shared Preferences
