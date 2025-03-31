@@ -242,3 +242,192 @@ class TextProvider extends ChangeNotifier {
   }
 }
 ```
+
+Vamos criar um exemplo semelhante ao anterior porém com a adição de uma nova tela
+que é acessível através de um botão na tela principal. O texto em ambas telas será 
+alterado através dos campos de texto.
+
+Primeiro devemos alterar nossa função runApp para utilizar o nosso provider
+
+```dart
+void main() {
+  runApp(ChangeNotifierProvider(
+      create: (context) => TextProvider(), child: const MyApp()));
+}
+```
+
+Nossa tela principal será semelhante ao exemplo anterior
+
+``` dart
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    final textProvider = Provider.of<TextProvider>(context);
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 100.0),
+          child: SizedBox(
+            width: 300,
+            child: Column(
+              children: [
+                Consumer<TextProvider>(
+                    builder: (context, provider, child) => Text(
+                          provider.text,
+                          style: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold),
+                        )),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(), labelText: 'Digite aqui'),
+                  onChanged: (value) {
+                    textProvider.updateText(value);
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+Mudanças: 
+- Criamos um objeto provider armazenado na variável textProvider;
+- Na função **onChanged** do TextField chamamos o método updateText do nosso provider;
+
+![[Pasted image 20250331141252.png]]
+
+Agora vamos criar nossa segunda tela, que será praticamente igual a tela principal
+
+`secundaria.dart`
+
+``` dart
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_example/text_provider.dart';
+
+class Secundaria extends StatefulWidget {
+  const Secundaria({super.key});
+
+  @override
+  State<Secundaria> createState() => _SecundariaState();
+}
+
+class _SecundariaState extends State<Secundaria> {
+  @override
+  Widget build(BuildContext context) {
+    final textProvider = Provider.of<TextProvider>(context);
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 100.0),
+          child: SizedBox(
+            width: 300,
+            child: Column(
+              children: [
+                Consumer<TextProvider>(
+                    builder: (context, provider, child) => Text(
+                          provider.text,
+                          style: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold),
+                        )),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(), labelText: 'Digite aqui'),
+                  onChanged: (value) {
+                    textProvider.updateText(value);
+                  },
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                ElevatedButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: const Text('Trocar tela'))
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+Mudanças: 
+- Adicionamos um botão que faz a navegação para a tela principal
+
+Agora na tela principal adicionamos um botão que faz a navegação para a tela secundária
+
+```dart
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    final textProvider = Provider.of<TextProvider>(context);
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 100.0),
+          child: SizedBox(
+            width: 300,
+            child: Column(
+              children: [
+                Consumer<TextProvider>(
+                    builder: (context, provider, child) => Text(
+                          provider.text,
+                          style: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold),
+                        )),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(), labelText: 'Digite aqui'),
+                  onChanged: (value) {
+                    textProvider.updateText(value);
+                  },
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Secundaria()));
+                    },
+                    child: const Text('Trocar tela'))
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
