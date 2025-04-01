@@ -24,8 +24,3 @@
 
 ## [[Navegação entre Telas]]
 - `Navigator.push()` e `Navigator.pop()`
-
-## [[Estilização e Temas]]
-- Uso de `ThemeData`
-- Dark Mode
-- Fonts customizadas e ícones
