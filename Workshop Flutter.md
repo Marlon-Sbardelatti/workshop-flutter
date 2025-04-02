@@ -14,13 +14,13 @@
 - `setState()`
 - Provider (básico)
 
-## [[Consumo de API]]
-- Uso do `http` package
-- Decodificação de JSON e modelo de dados
-- Exibição dos dados na UI (ListView/GridView)
+## [[Navegação entre Telas]]
+- `Navigator.push()` e `Navigator.pop()`
 
 ## [[Persistência de Dados]]
 - **SharedPreferences** (armazenamento simples)
 
-## [[Navegação entre Telas]]
-- `Navigator.push()` e `Navigator.pop()`
+## [[Consumo de API]]
+- Uso do `http` package
+- Decodificação de JSON e modelo de dados
+- Exibição dos dados na UI (ListView/GridView)

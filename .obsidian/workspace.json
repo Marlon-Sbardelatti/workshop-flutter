@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Workshop Flutter.md",
+                "file": "tópicos/Persistência de Dados.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Workshop Flutter"
+              "title": "Persistência de Dados"
             }
           },
           {
@@ -183,15 +183,19 @@
       "ledger-obsidian:Add to Ledger": false
     }
   },
-  "active": "de31479e63c67eb0",
+  "active": "6175061a0ba40a1f",
   "lastOpenFiles": [
+    "tópicos/imagens/Pasted image 20250402091833.png",
+    "tópicos/imagens/Pasted image 20250402091758.png",
+    "tópicos/imagens/Pasted image 20250402091657.png",
+    "Pasted image 20250402073041.png",
+    "Workshop Flutter.md",
     "tópicos/Consumo de API.md",
     "tópicos/Widgets Essenciais.md",
-    "Pasted image 20250401174637.png",
-    "Pasted image 20250401154050.png",
+    "tópicos/imagens/Pasted image 20250401174637.png",
+    "tópicos/imagens/Pasted image 20250401154050.png",
     "tópicos/imagens/Pasted image 20250401152752.png",
     "tópicos/imagens/Pasted image 20250401152716.png",
-    "Workshop Flutter.md",
     "tópicos/Navegação entre Telas.md",
     "tópicos/imagens/Pasted image 20250331165548.png",
     "tópicos/Gerenciamento de Estado.md",
@@ -200,9 +204,6 @@
     "tópicos/Introdução ao Flutter.md",
     "Exemplos.md",
     "tópicos/imagens/Pasted image 20250329201627.png",
-    "tópicos/imagens/Pasted image 20250329202354.png",
-    "tópicos/imagens/Pasted image 20250329231459.png",
-    "tópicos/imagens/Pasted image 20250329230507.png",
     "tópicos/Persistência de Dados.md",
     "Untitled.canvas",
     "2025-03-25.md",
