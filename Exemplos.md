@@ -2,7 +2,7 @@
 - [x] widgets de layout ✅ 2025-03-29
 - [x] widgets de interação ✅ 2025-03-29
 - [x] widgets de personalização ✅ 2025-03-29
-- [ ] Estado local (setState) 
-- [ ] Estado global (provider)
-- [ ] Shared Preferences
-- [ ] Navigator 
+- [x] Estado local (setState) ✅ 2025-04-02
+- [x] Estado global (provider) ✅ 2025-04-02
+- [x] Shared Preferences ✅ 2025-04-02
+- [x] Navigator ✅ 2025-04-02

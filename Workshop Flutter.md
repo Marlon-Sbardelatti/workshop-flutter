@@ -17,10 +17,10 @@
 ## [[Navegação entre Telas]]
 - `Navigator.push()` e `Navigator.pop()`
 
-## [[Persistência de Dados]]
-- **SharedPreferences** (armazenamento simples)
-
 ## [[Consumo de API]]
 - Uso do `http` package
 - Decodificação de JSON e modelo de dados
 - Exibição dos dados na UI (ListView/GridView)
+
+## [[Persistência de Dados]]
+- **SharedPreferences** (armazenamento simples)

@@ -49,7 +49,6 @@ Botão elevado no estilo do material design
 
 ![[elevated-button.png]]
 
-### ListView
 
 ## Widgets de personalização 
 

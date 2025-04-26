@@ -130,6 +130,7 @@ chamada quando nosso aplicativo for inicializado.
       final data = jsonDecode(res.body);
       List<Character> characters = [];
       List<dynamic> charactersJson = data['results'];
+	  
       characters.addAll(
           charactersJson.map((json) => Character.fromJson(json)).toList());
     } else {
@@ -501,30 +502,7 @@ na variável nextPageUrl
     } else {
       throw Exception('Erro ao carregar imagem');
     }
-  }  Future<void> fetchCharacters() async {
-    final res =
-        await http.get(Uri.parse('https://rickandmortyapi.com/api/character/'));
-
-    if (res.statusCode == 200) {
-      final data = jsonDecode(res.body);
-      List<Character> characters = [];
-      List<dynamic> charactersJson = data['results'];
-      characters.addAll(
-          charactersJson.map((json) => Character.fromJson(json)).toList());
-
-      setState(() {
-        if (data['info']['next'] != null) {
-          nextPageUrl = data['info']['next'];
-        } else {
-          nextPageUrl = '';
-        }
-        _characters = characters;
-        _isLoading = false;
-      });
-    } else {
-      throw Exception('Erro ao carregar imagem');
-    }
-  }
+  }  
 ```
 
 Agora vamos criar uma nova função que será utilizada para adicionar novos personagens a tela, ou seja, fazer uma requisição para outra página. 
@@ -649,39 +627,8 @@ enviar esse valor para o endpoint da API
 
       await fetchCharacters();
       return;
-    }  Future<void> _getCharacterByParam(String param) async {
-    if (param == '') {
-      setState(() {
-        _isLoading = true;
-      });
-
-      await fetchCharacters();
-      return;
-    }
-
-    final res = await http.get(
-        Uri.parse('https://rickandmortyapi.com/api/character/?name=$param'));
-
-    if (res.statusCode == 200) {
-      final data = jsonDecode(res.body);
-      List<Character> characters = [];
-      List<dynamic> charactersJson = data['results'];
-      characters.addAll(
-          charactersJson.map((json) => Character.fromJson(json)).toList());
-
-      setState(() {
-        if (data['info']['next'] != null) {
-          nextPageUrl = data['info']['next'];
-        } else {
-          nextPageUrl = '';
-        }
-        _characters = characters;
-      });
-    } else {
-      throw Exception('Erro ao carregar imagem');
-    }
-  }
-
+    }  
+	
     final res = await http.get(
         Uri.parse('https://rickandmortyapi.com/api/character/?name=$param'));
 
@@ -735,12 +682,7 @@ Adicionamos um espaço entre o grid e a barra
 		),
 	  ),
 	  onChanged: (value) async {
-		if (_debounce?.isActive ?? false) _debounce!.cancel();
-
-		_debounce =
-			Timer(const Duration(milliseconds: 100), () async {
-		  await _getCharacterByParam(value);
-		});
+	  
 	  }),
   const SizedBox(
 	height: 10,
